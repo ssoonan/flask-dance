@@ -8,5 +8,4 @@ htmlcov
 dist
 docs/_build
 build
-venv/
 MANIFEST

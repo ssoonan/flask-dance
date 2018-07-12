@@ -115,7 +115,7 @@ class OAuth2ConsumerBlueprint(BaseOAuthConsumerBlueprint):
 
         self.base_url = base_url
         self.session_class = session_class or OAuth2Session
-
+        # self의 session_class에 넘겨버리고 끝인데? 이 session_class가 어떻게 쓰이는 것이지 그러면?
         # passed to OAuth2Session()
         self._client_id = client_id
         self.client = client
@@ -145,7 +145,7 @@ class OAuth2ConsumerBlueprint(BaseOAuthConsumerBlueprint):
         self.session.client_id = value
         # due to a bug in requests-oauthlib, we need to set this manually
         self.session._client.client_id = value
-
+    # TODO 여기 분석~!
     @lazy
     def session(self):
         """

@@ -73,7 +73,7 @@ class OAuth1Session(BaseOAuth1Session):
             method=method, url=url, data=data, headers=headers, **kwargs
         )
 
-
+# 여기서 requests에만 있는 세션을 flask와 연결해주는 작업을 한달까.. 여기를 좀 더 자세히 보자.
 class OAuth2Session(BaseOAuth2Session):
     """
     A :class:`requests.Session` subclass that can do some special things:
@@ -104,6 +104,7 @@ class OAuth2Session(BaseOAuth2Session):
             return True
         return False
 
+# 토큰이 있고, access_token을 키로 가질 때만 그 access_token 값이 나간다.
     @property
     def access_token(self):
         return self.token and self.token.get("access_token")
